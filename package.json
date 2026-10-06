@@ -1,0 +1,19 @@
+{
+  "name": "lumina-label-engine",
+  "version": "1.0.0",
+  "description": "Thermal-safe 80x60mm label typography engine: QR, CJK/EN poem band, minimax line breaking.",
+  "main": "poem-label.js",
+  "scripts": {
+    "build": "node poem-label.js"
+  },
+  "keywords": [
+    "svg",
+    "thermal-printer",
+    "typography",
+    "line-breaking",
+    "cjk",
+    "label"
+  ],
+  "license": "MIT",
+  "private": false
+}
