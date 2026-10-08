@@ -11,7 +11,7 @@ It renders print-ready SVG with:
 - **1-bit / thermal-safe** output: every glyph is stroked, because thin horizontal
   CJK strokes (`一`, `三`, `二`) are the first thing to drop out at 203 dpi
 
-The interesting part is not the layout — it is that the type has to *fit* a
+The interesting part is not the layout. It is that the type has to *fit* a
 physical box on a physical printer, and there is no second attempt once the roll
 is running.
 
@@ -25,7 +25,7 @@ When an English line has to be split into *n* lines, the type size is set by the
 **longest** line. Greedy packing strands a long tail line, and the whole block
 shrinks to fit it.
 
-So the engine solves it exactly with dynamic programming — choose the break
+So the engine solves it exactly with dynamic programming: choose the break
 points that minimise the longest resulting line:
 
 ```js
@@ -48,7 +48,7 @@ The poem band is laid out by a small vertical engine:
 - the hero block is centred in whatever space is left **above** it
 
 So the hero always gets every millimetre the subtitle does not need, and the two
-blocks are geometrically incapable of overlapping — regardless of how many lines
+blocks are geometrically incapable of overlapping, regardless of how many lines
 each one takes.
 
 A candidate layout only wins if it renders the text at least **8% larger** than
@@ -68,7 +68,7 @@ Writes:
 |---|---|
 | `poem-label-80x60-v1.svg` | Chinese poem as hero, English as subtitle |
 | `poem-label-80x60-en-v1.svg` | English poem as hero, Chinese as subtitle |
-| `poem-label-testsheet.svg` | A4 sheet, 8 risk cases — the before-print check |
+| `poem-label-testsheet.svg` | A4 sheet, 8 risk cases. The before-print check |
 
 No dependencies. Node 14+.
 
@@ -85,7 +85,7 @@ const svg = poemLabel({
 });
 ```
 
-`poemLabelBody()` returns the inner markup only — no `<svg>` wrapper — so the
+`poemLabelBody()` returns the inner markup only (no `<svg>` wrapper), so the
 label can be placed onto a larger sheet or injected into another document.
 
 ---
@@ -96,9 +96,9 @@ Units are **0.1 mm**; the viewBox is `0 0 800 600` (80 × 60 mm).
 
 Fonts are referenced by family name and must be installed on the rendering host:
 
-- `IBM Plex Mono` — the mono column (brand, series, supplied-to, name)
-- `Noto Serif TC` — Chinese poetry
-- `Noto Serif Display` — Latin poetry
+- `IBM Plex Mono`: the mono column (brand, series, supplied-to, name)
+- `Noto Serif TC`: Chinese poetry
+- `Noto Serif Display`: Latin poetry
 
 Monospace runs pin their advance width with `textLength` + `lengthAdjust="spacing"`,
 which is the only reliable way to hold a mono grid across renderers.
@@ -108,7 +108,7 @@ which is the only reliable way to hold a mono grid across renderers.
 ## What this is not
 
 The grip is a commodity and so is the label stock. This repo is the tooling, not
-the moat. The moat is shelf position and the reorder data — neither of which is
+the moat. The moat is shelf position and the reorder data, neither of which is
 in here.
 
 ---
